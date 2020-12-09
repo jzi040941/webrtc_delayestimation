@@ -139,7 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="audio_processing\checks.cc" />
+    <ClCompile Include="audio_processing\decimator.cc" />
+    <ClCompile Include="audio_processing\downsampled_render_buffer.cc" />
+    <ClCompile Include="audio_processing\echo_path_delay_estimator.cc" />
+    <ClCompile Include="audio_processing\matched_filter.cc" />
+    <ClCompile Include="audio_processing\matched_filter_lag_aggregator.cc" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_processing\checks.h" />
+    <ClInclude Include="audio_processing\decimator.h" />
+    <ClInclude Include="audio_processing\delay_estimate.h" />
+    <ClInclude Include="audio_processing\downsampled_render_buffer.h" />
+    <ClInclude Include="audio_processing\echo_path_delay_estimator.h" />
+    <ClInclude Include="audio_processing\matched_filter.h" />
+    <ClInclude Include="audio_processing\matched_filter_lag_aggregator.h" />
+    <ClInclude Include="audio_processing\safe_compare.h" />
+    <ClInclude Include="audio_processing\type_traits.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

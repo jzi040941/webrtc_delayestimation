@@ -54,11 +54,11 @@ RTC_NORETURN void rtc_FatalMessage(const char* file, int line, const char* msg);
 
 #include <string>
 
-#include "absl/meta/type_traits.h"
-#include "absl/strings/string_view.h"
-#include "rtc_base/numerics/safe_compare.h"
-#include "rtc_base/system/inline.h"
-#include "rtc_base/system/rtc_export.h"
+//#include "absl/meta/type_traits.h"
+//#include "absl/strings/string_view.h"
+#include "safe_compare.h"
+//#include "rtc_base/system/inline.h"
+//#include "rtc_base/system/rtc_export.h"
 
 // The macros here print a message to stderr and abort under various
 // conditions. All will accept additional stream messages. For example:
@@ -121,6 +121,7 @@ enum class CheckArgType : int8_t {
   kCheckOp,
 };
 
+/*
 #if RTC_CHECK_MSG_ENABLED
 RTC_NORETURN RTC_EXPORT void FatalLog(const char* file,
                                       int line,
@@ -130,7 +131,7 @@ RTC_NORETURN RTC_EXPORT void FatalLog(const char* file,
 #else
 RTC_NORETURN RTC_EXPORT void FatalLog(const char* file, int line);
 #endif
-
+*/
 // Wrapper for log arguments. Only ever make values of this type with the
 // MakeVal() functions.
 template <CheckArgType N, typename T>
@@ -183,15 +184,17 @@ inline Val<CheckArgType::kStdString, const std::string*> MakeVal(
     const std::string& x) {
   return {&x};
 }
+/*
 inline Val<CheckArgType::kStringView, const absl::string_view*> MakeVal(
     const absl::string_view& x) {
   return {&x};
 }
-
+*/
 inline Val<CheckArgType::kVoidP, const void*> MakeVal(const void* x) {
   return {x};
 }
 
+/*
 // The enum class types are not implicitly convertible to arithmetic types.
 template <typename T,
           absl::enable_if_t<std::is_enum<T>::value &&
@@ -200,6 +203,7 @@ inline decltype(MakeVal(std::declval<absl::underlying_type_t<T>>())) MakeVal(
     T x) {
   return {static_cast<absl::underlying_type_t<T>>(x)};
 }
+*/
 
 template <typename T, decltype(ToLogString(std::declval<T>()))* = nullptr>
 ToStringVal MakeVal(const T& x) {
@@ -210,6 +214,7 @@ ToStringVal MakeVal(const T& x) {
 template <typename... Ts>
 class LogStreamer;
 
+/*
 // Base case: Before the first << argument.
 template <>
 class LogStreamer<> final {
@@ -257,6 +262,7 @@ class LogStreamer<> final {
   }
 #endif
 };
+*/
 
 // Inductive case: We've already seen at least one << argument. The most recent
 // one had type `T`, and the earlier ones had types `Ts`.

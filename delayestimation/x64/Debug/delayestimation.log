@@ -1,0 +1,23 @@
+﻿  checks.cc
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(272,1): error C3646: 'LogStreamer': unknown override specifier
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(321): message : see reference to class template instantiation 'rtc::webrtc_checks_impl::LogStreamer<T,Ts...>' being compiled
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(272,31): error C2059: syntax error: '('
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(273,1): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(321,1): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  decimator.cc
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\decimator.cc(10,10): fatal error C1083: Cannot open include file: 'modules/audio_processing/aec3/decimator.h': No such file or directory
+  downsampled_render_buffer.cc
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(272,1): error C3646: 'LogStreamer': unknown override specifier
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(321): message : see reference to class template instantiation 'rtc::webrtc_checks_impl::LogStreamer<T,Ts...>' being compiled
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(272,31): error C2059: syntax error: '('
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(273,1): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\checks.h(321,1): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  echo_path_delay_estimator.cc
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\echo_path_delay_estimator.h(16,10): fatal error C1083: Cannot open include file: 'absl/types/optional.h': No such file or directory
+  matched_filter.cc
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\matched_filter.cc(10,10): fatal error C1083: Cannot open include file: 'modules/audio_processing/aec3/matched_filter.h': No such file or directory
+  matched_filter_lag_aggregator.cc
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\matched_filter_lag_aggregator.h(16,10): fatal error C1083: Cannot open include file: 'absl/types/optional.h': No such file or directory
+  main.cpp
+C:\Users\hpuser\Documents\develop\webrtc_delayestimation\delayestimation\audio_processing\echo_path_delay_estimator.h(16,10): fatal error C1083: Cannot open include file: 'absl/types/optional.h': No such file or directory
+  Generating Code...

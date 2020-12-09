@@ -13,15 +13,15 @@
 
 #include <stddef.h>
 
-#include "absl/types/optional.h"
-#include "api/array_view.h"
-#include "modules/audio_processing/aec3/alignment_mixer.h"
-#include "modules/audio_processing/aec3/clockdrift_detector.h"
-#include "modules/audio_processing/aec3/decimator.h"
-#include "modules/audio_processing/aec3/delay_estimate.h"
-#include "modules/audio_processing/aec3/matched_filter.h"
-#include "modules/audio_processing/aec3/matched_filter_lag_aggregator.h"
-#include "rtc_base/constructor_magic.h"
+//#include "absl/types/optional.h"
+#include "array_view.h"
+#include "alignment_mixer.h"
+#include "clockdrift_detector.h"
+#include "decimator.h"
+#include "delay_estimate.h"
+#include "matched_filter.h"
+#include "matched_filter_lag_aggregator.h"
+#include "constructor_magic.h"
 
 namespace webrtc {
 
@@ -32,8 +32,7 @@ struct EchoCanceller3Config;
 // Estimates the delay of the echo path.
 class EchoPathDelayEstimator {
  public:
-  EchoPathDelayEstimator(ApmDataDumper* data_dumper,
-                         const EchoCanceller3Config& config,
+  EchoPathDelayEstimator(const EchoCanceller3Config& config,
                          size_t num_capture_channels);
   ~EchoPathDelayEstimator();
 
@@ -42,7 +41,7 @@ class EchoPathDelayEstimator {
   void Reset(bool reset_delay_confidence);
 
   // Produce a delay estimate if such is avaliable.
-  absl::optional<DelayEstimate> EstimateDelay(
+  DelayEstimate EstimateDelay(
       const DownsampledRenderBuffer& render_buffer,
       const std::vector<std::vector<float>>& capture);
 
@@ -65,7 +64,7 @@ class EchoPathDelayEstimator {
   Decimator capture_decimator_;
   MatchedFilter matched_filter_;
   MatchedFilterLagAggregator matched_filter_lag_aggregator_;
-  absl::optional<DelayEstimate> old_aggregated_lag_;
+  DelayEstimate old_aggregated_lag_;
   size_t consistent_estimate_counter_ = 0;
   ClockdriftDetector clockdrift_detector_;
 

@@ -56,7 +56,7 @@ void EchoPathDelayEstimator::Reset(bool reset_delay_confidence) {
   Reset(true, reset_delay_confidence);
 }
 
-absl::optional<DelayEstimate> EchoPathDelayEstimator::EstimateDelay(
+DelayEstimate EchoPathDelayEstimator::EstimateDelay(
     const DownsampledRenderBuffer& render_buffer,
     const std::vector<std::vector<float>>& capture) {
   RTC_DCHECK_EQ(kBlockSize, capture[0].size());
@@ -85,6 +85,7 @@ absl::optional<DelayEstimate> EchoPathDelayEstimator::EstimateDelay(
           DelayEstimate::Quality::kRefined)
     clockdrift_detector_.Update((*aggregated_matched_filter_lag).delay);
 
+  /*
   // TODO(peah): Move this logging outside of this class once EchoCanceller3
   // development is done.
   data_dumper_->DumpRaw(
@@ -93,6 +94,7 @@ absl::optional<DelayEstimate> EchoPathDelayEstimator::EstimateDelay(
           ? static_cast<int>(aggregated_matched_filter_lag->delay *
                              down_sampling_factor_)
           : -1);
+  */
 
   // Return the detected delay in samples as the aggregated matched filter lag
   // compensated by the down sampling factor for the signal being correlated.
